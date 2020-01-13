@@ -3,7 +3,7 @@ const actualYear = dt.getFullYear();
 const myAge = (birth) => {
     return (actualYear - birth)
 };
-
+myAge(1990)
 
 
 const triangle = (a, b, c) => {
@@ -55,4 +55,4 @@ const evenNumbers = numbers.filter(item => {
         return item;
     }
 });
-console.log(fourthArray)
+console.log(evenNumbers)
