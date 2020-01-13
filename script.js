@@ -1,5 +1,4 @@
 const dt = new Date();
-
 const actualYear = dt.getFullYear();
 const myAge = (birth) => {
     return (actualYear - birth)
@@ -14,27 +13,38 @@ const triangle = (a, b, c) => {
 }
 
 const arr = []
-const chars = '0123456789';
-const charsNumber = 10;
 const tenNumbers = () => {
-    for (let i = 0; i < charsNumber; i++) {
-        const index = Math.floor(Math.random() * 10);
-        arr.push(chars[index])
+    for (let i = 0; i < 10; i++) {
+        const index = Math.floor(Math.random() * 100);
+        arr.push(index)
     }
 }
 tenNumbers();
 console.log(arr)
 
-let arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-arr2.sort(() => Math.random() - Math.random());
+const arr2 = Array.from({
+    length: 10
+}, () => Math.floor(Math.random() * 100));
+
 console.log(arr2)
 
-let arr3 = [...Array(10).keys()];
-
-const numbers = [2, 5, 7, 10, 34, 16, 879, 1];
-const evenArray = numbers.filter(number => {
-    if (number % 2 === 0) {
-        return number
+const arr3 = [];
+const arrPush = () => {
+    for (let a = 0; a < 10; a++) {
+        arr3[a] = [arr];
     }
-});
-console.log(evenArray)
+}
+arrPush();
+console.log(arr3)
+
+
+
+const words = ["ala", "tomek", "gosia", "bartek", "ola", "jan", "ewelina", "stefania", "kamil", "adrian", "wojtek", "kuba", "piotrek", "karol", "amelia"]
+const index = (txt) => {
+    const search = words.indexOf(txt);
+    if (search !== -1) {
+        console.log(`Szukany wyraz to ${txt} a index to ${search}`)
+    } else {
+        console.log(`Szukany wyraz nie istnieje`)
+    }
+}
