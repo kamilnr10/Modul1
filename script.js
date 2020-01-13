@@ -3,7 +3,7 @@ const actualYear = dt.getFullYear();
 const myAge = (birth) => {
     return (actualYear - birth)
 };
-myAge(1990)
+console.log(myAge(1990))
 
 
 const triangle = (a, b, c) => {
@@ -11,6 +11,7 @@ const triangle = (a, b, c) => {
     else return false
 
 }
+console.log(triangle(3, 4, 5))
 
 const arr = []
 const tenNumbers = () => {
@@ -31,7 +32,12 @@ console.log(arr2)
 const arr3 = [];
 const arrPush = () => {
     for (let a = 0; a < 10; a++) {
-        arr3[a] = [arr];
+        const emptyArray = [];
+        for (let i = 0; i < 10; i++) {
+            const index = Math.floor(Math.random() * 100);
+            emptyArray.push(index)
+        }
+        arr3[a] = [emptyArray];
     }
 }
 arrPush();
@@ -48,6 +54,7 @@ const index = (txt) => {
         console.log(`Szukany wyraz nie istnieje`)
     }
 }
+console.log(index('ala'))
 
 const numbers = [2, 5, 7, 10, 34, 16, 879, 1];
 const evenNumbers = numbers.filter(item => {
