@@ -48,3 +48,11 @@ const index = (txt) => {
         console.log(`Szukany wyraz nie istnieje`)
     }
 }
+
+const numbers = [2, 5, 7, 10, 34, 16, 879, 1];
+const evenNumbers = numbers.filter(item => {
+    if (item % 2 === 0) {
+        return item;
+    }
+});
+console.log(fourthArray)
