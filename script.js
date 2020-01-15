@@ -28,8 +28,7 @@ const tenNumbers = () => {
 tenNumbers();
 console.log(arr);
 
-const arr2 = Array.from(
-  {
+const arr2 = Array.from({
     length: 10
   },
   () => Math.floor(Math.random() * 100)
@@ -135,7 +134,7 @@ const randomAge = () => {
 const countryArray = ["PL", "UK", "USA"];
 const oneOf = countryArray[Math.floor(Math.random() * countryArray.length)];
 
-const GenerateHuman = function(name, surname) {
+const GenerateHuman = function (name, surname) {
   this.name = name;
   this.surname = surname;
   this.email = `${name}@${surname}`.toLowerCase();
