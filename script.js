@@ -1,3 +1,5 @@
+// 1) Utwórz funkcję, która jako argument przyjmuje Twój rok urodzenia.
+// Funkcja powinna zwrócić Twój aktualny wiek.
 const dt = new Date();
 const actualYear = dt.getFullYear();
 const myAge = birth => {
@@ -5,12 +7,17 @@ const myAge = birth => {
 };
 console.log(myAge(1990));
 
+// "2) Utwórz funkcję, która jako argument przyjmie trzy liczby.
+// Funkcja powinna zwrócić true jeśli z odcinków o długości przekazanych w argumentach
+// można zbudować trójkąt prostokątny, lub informację że
+// z podanych długości nie można utworzyć trójkąta prostokątnego"
 const triangle = (a, b, c) => {
   if (a ** 2 + b ** 2 === c ** 2) return true;
   else return false;
 };
 console.log(triangle(3, 4, 5));
 
+// 3) Wygeneruj tablicę zawierającą 10 liczb losowych.
 const arr = [];
 const tenNumbers = () => {
   for (let i = 0; i < 10; i++) {
@@ -30,6 +37,7 @@ const arr2 = Array.from(
 
 console.log(arr2);
 
+// 4) Umieść 10 tablic wygenerowanych w zadaniu 3, w jednej tablicy.
 const arr3 = [];
 const arrPush = () => {
   for (let a = 0; a < 10; a++) {
@@ -44,6 +52,11 @@ const arrPush = () => {
 arrPush();
 console.log(arr3);
 
+// "5) Stwórz tablicę zawierającą 15 wyrazów. Utwórz funkcję która
+// jako argument przyjmuje wyraz.
+// Funkcja ma sprawdzić czy fraza występuje w tablicy.
+// Jeśli tak ma zwrócić informacje o tym elemencie (pozycja, wartość).
+// Jeśli nie, zwraca powiadomienie że szukanej frazy brak w tablicy."
 const words = [
   "ala",
   "tomek",
@@ -71,6 +84,8 @@ const index = txt => {
 };
 console.log(index("ala"));
 
+// 6) Masz daną tablicę: const numbers = [2, 5, 7, 10, 34, 16, 879, 1].
+//  Napisz funkcję, która zwróci nową tablicę zawierającą tylko parzyste liczby z tablicy numbers.
 const numbers = [2, 5, 7, 10, 34, 16, 879, 1];
 const evenNumbers = numbers.filter(item => {
   if (item % 2 === 0) {
@@ -79,11 +94,10 @@ const evenNumbers = numbers.filter(item => {
 });
 console.log(evenNumbers);
 
-// const sample1 = [1, 2, 3];
-// const mapResult1 = sample1.mymap(function(val, index, array) {
-//   console.log("val :", val, "index :", index, "array :", array);
-//   return val * 2;
-// });
+// 7) arraye mają zbudowane metody .map .filter i .reduce.
+//  Zbuduj 3 funkcję map(array, mapFn), filter(array, filterFn)
+// i reduce(array, reduceFn) w których stworzysz własną implementację funkcji wbudowanych,
+// Twoje funkcje mają działać tak samo jak te wbudowane
 
 function map(arr, mapFunc) {
   const mapArr = [];
@@ -109,13 +123,24 @@ function reduce(arr, reducer, initialValue) {
   return acc;
 }
 
-const GenerateHuman = class {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+// 8) Stwórz funkcję generateHuman() która będzie tworzyć obiekt o podanej niżej strukturze ale o losowych wartościach
+// {name, surname, email:(w oparciu o name i surname), age:(przedział 18-85), country:oneOf([PL,UK,USA])}
+// losowe name i surname. https://www.json-generator.com/.
+// Dodatkowe pola - phoneNr - random 9 numbers,
+// oraz _id = objectId() - wykorzystać bibliotekę  https://www.npmjs.com/package/uuid
+
+const randomAge = () => {
+  return Math.floor(Math.random() * 68) + 18;
+};
+const countryArray = ["PL", "UK", "USA"];
+const oneOf = countryArray[Math.floor(Math.random() * countryArray.length)];
+
+const GenerateHuman = function(name, surname) {
+  this.name = name;
+  this.surname = surname;
+  this.email = `${name}@${surname}`.toLowerCase();
+  this.age = randomAge();
+  this.country = oneOf;
 };
 
-const human = new GenerateHuman("adam", 18);
-
-new GenerateHuman("Tomek", 15);
+const human = new GenerateHuman("Tomek", "Omega");
