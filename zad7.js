@@ -3,6 +3,7 @@
 // i reduce(array, reduceFn) w których stworzysz własną implementację funkcji wbudowanych,
 // Twoje funkcje mają działać tak samo jak te wbudowane
 
+
 function map(arr, mapFunc) {
     const mapArr = [];
     for (let i = 0; i < arr.length; i++) {

@@ -9,6 +9,9 @@ const randomAge = () => {
 };
 const countryArray = ["PL", "UK", "USA"];
 const oneOf = countryArray[Math.floor(Math.random() * countryArray.length)];
+const phoneNr = () => {
+    return Math.random().toString().slice(2, 11);
+}
 
 const GenerateHuman = function (name, surname) {
     this.name = name;
@@ -16,6 +19,7 @@ const GenerateHuman = function (name, surname) {
     this.email = `${name}@${surname}`.toLowerCase();
     this.age = randomAge();
     this.country = oneOf;
+    this.phone = phoneNr();
 };
 
 const human = new GenerateHuman("Tomek", "Omega");

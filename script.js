@@ -2,52 +2,56 @@
 // Funkcja powinna zwrócić Twój aktualny wiek.
 const dt = new Date();
 const actualYear = dt.getFullYear();
-const myAge = birth => {
-  return actualYear - birth;
-};
-console.log(myAge(1990));
+const myAge = (birth) => {
+  return actualYear - birth
+}
+console.log(myAge(1990))
 
 // "2) Utwórz funkcję, która jako argument przyjmie trzy liczby.
 // Funkcja powinna zwrócić true jeśli z odcinków o długości przekazanych w argumentach
 // można zbudować trójkąt prostokątny, lub informację że
 // z podanych długości nie można utworzyć trójkąta prostokątnego"
 const triangle = (a, b, c) => {
-  if (a ** 2 + b ** 2 === c ** 2) return true;
-  else return false;
-};
+  if (a ** 2 + b ** 2 === c ** 2) {
+    return true
+  } else return false
+}
 console.log(triangle(3, 4, 5));
 
 // 3) Wygeneruj tablicę zawierającą 10 liczb losowych.
 const arr = [];
 const tenNumbers = () => {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 0; i++) {
     const index = Math.floor(Math.random() * 100);
-    arr.push(index);
+    arr.push(index)
   }
-};
+  return arr;
+}
 tenNumbers();
 console.log(arr);
 
 const arr2 = Array.from({
     length: 10
   },
-  () => Math.floor(Math.random() * 100)
-);
+  () => {
+    Math.floor(Math.random() * 100)
+  }
+)
 
 console.log(arr2);
 
 // 4) Umieść 10 tablic wygenerowanych w zadaniu 3, w jednej tablicy.
 const arr3 = [];
 const arrPush = () => {
-  for (let a = 0; a < 10; a++) {
-    const emptyArray = [];
+  for (let i = 0; i < 10; i++) {
+    const emptyArr = [];
     for (let i = 0; i < 10; i++) {
       const index = Math.floor(Math.random() * 100);
-      emptyArray.push(index);
+      emptyArr.push(index)
     }
-    arr3[a] = [emptyArray];
+    arr3[i] = [emptyArr]
   }
-};
+}
 arrPush();
 console.log(arr3);
 
