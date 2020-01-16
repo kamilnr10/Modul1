@@ -14,12 +14,16 @@ const phoneNr = () => {
 }
 
 const GenerateHuman = function (name, surname) {
+    const objectId = uuidv4();
+
     this.name = name;
     this.surname = surname;
     this.email = `${name}@${surname}`.toLowerCase();
     this.age = randomAge();
     this.country = oneOf;
     this.phone = phoneNr();
+    this._id = objectId;
 };
 
 const human = new GenerateHuman("Tomek", "Omega");
+const human2 = new GenerateHuman("Kasia", "Chomik")
