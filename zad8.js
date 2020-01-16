@@ -8,7 +8,10 @@ const randomAge = () => {
     return Math.floor(Math.random() * 68) + 18;
 };
 const countryArray = ["PL", "UK", "USA"];
-const oneOf = countryArray[Math.floor(Math.random() * countryArray.length)];
+const oneOf = () => {
+    return countryArray[Math.floor(Math.random() * countryArray.length)];
+}
+
 const phoneNr = () => {
     return Math.random().toString().slice(2, 11);
 }
@@ -20,7 +23,7 @@ const GenerateHuman = function (name, surname) {
     this.surname = surname;
     this.email = `${name}@${surname}`.toLowerCase();
     this.age = randomAge();
-    this.country = oneOf;
+    this.country = oneOf();
     this.phone = phoneNr();
     this._id = objectId;
 };
