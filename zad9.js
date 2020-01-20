@@ -19,13 +19,6 @@ const mapForInArr = alphabet.map((value, index) => {
     }
 })
 
-function mapForIn() {
-    alphabet.map((value, index) => {
-        // console.log(`${index} : ${value}`)
-        return value
-    })
-}
-
 
 function forOf(array, forFn) {
     for (let alpha of polishAlphabet) {
