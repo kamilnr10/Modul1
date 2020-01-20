@@ -21,11 +21,10 @@ console.log(triangle(3, 4, 5));
 // 3) Wygeneruj tablicę zawierającą 10 liczb losowych.
 const arr = [];
 const tenNumbers = () => {
-  for (let i = 0; i < 0; i++) {
+  for (let i = 0; i < 10; i++) {
     const index = Math.floor(Math.random() * 100);
     arr.push(index)
   }
-  return arr;
 }
 tenNumbers();
 console.log(arr);
@@ -44,12 +43,12 @@ console.log(arr2);
 const arr3 = [];
 const arrPush = () => {
   for (let i = 0; i < 10; i++) {
-    const emptyArr = [];
-    for (let i = 0; i < 10; i++) {
+    const emptyArr = []
+    for (let a = 0; a < 10; a++) {
       const index = Math.floor(Math.random() * 100);
       emptyArr.push(index)
     }
-    arr3[i] = [emptyArr]
+    arr3[a] = [emptyArr]
   }
 }
 arrPush();
