@@ -61,10 +61,10 @@ function mapForOf() {
 
 function forI(array, forFn) {
   for (let i = 0; i < polishAlphabet.length; i++) {
-    console.log(`${polishAlphabet[i]}: ${i}`);
+    console.log(`${polishAlphabet[i]}: ${i}, ${polishAlphabet}`);
   }
 }
 
-const mapForIArr = polishAlphabet.map((value, index) => {
-  console.log(`${value}: ${index}`);
+const mapForIArr = polishAlphabet.map((value, index, array) => {
+  console.log(`${value}: ${index}, ${array}`);
 });
