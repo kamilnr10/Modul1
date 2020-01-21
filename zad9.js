@@ -66,5 +66,5 @@ function forI(array, forFn) {
 }
 
 const mapForIArr = polishAlphabet.map((value, index, array) => {
-  console.log(`${value}: ${index}, ${array}`);
+  console.log(`${value}: ${index}, ${array[index]}`);
 });
