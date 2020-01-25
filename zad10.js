@@ -41,15 +41,17 @@ const shuffleArr = (arr) => {
     return dividedArray;
 }
 
-console.log(shuffleArr(alphabet))
+// console.log(shuffleArr(alphabet))
 
-const nextIndex = Math.floor(Math.random() * alphabet.length);
+const nextIndex = () => {
+    return Math.floor(Math.random() * (7 - 4 + 1) + 4)
+}
 
 const chunk = (array) => {
     const dividedArr = [];
     for (let i = 0; i < array.length; i++) {
         const part = dividedArr[dividedArr.length - 1];
-        if (!part || part.length === nextIndex) {
+        if (!part || part.length === Math.floor(Math.random() * (7 - 4 + 1) + 4)) {
             dividedArr.push([array[i]]);
         } else {
             part.push(array[i]);
