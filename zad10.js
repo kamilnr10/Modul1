@@ -42,3 +42,31 @@ const shuffleArr = (arr) => {
 }
 
 console.log(shuffleArr(alphabet))
+
+const nextIndex = Math.floor(Math.random() * alphabet.length);
+
+const chunk = (array) => {
+    const dividedArr = [];
+    for (let i = 0; i < array.length; i++) {
+        const part = dividedArr[dividedArr.length - 1];
+        if (!part || part.length === nextIndex) {
+            dividedArr.push([array[i]]);
+        } else {
+            part.push(array[i]);
+        }
+    }
+    return dividedArr;
+}
+
+
+// stwórz sobie zmieną nextIndex która na początku jest 1 liczbą random
+// 6:06
+// a potem dodawaj do niej kolejne liczby randomowe jeśli przepchnie się cały array
+// 6:06
+// powinieneś wewnątrz fora użyć ifa
+// 6:06
+// i stworzyć sobie np let partArray = []
+// 6:06
+// do którego są wrzucane elementy w danej częsci
+// 6:07
+// lub jeśli index i nextIndex będą się zgadzać to partArray powinien być wrzucany do dividedArray
