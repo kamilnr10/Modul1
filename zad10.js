@@ -43,8 +43,9 @@ const shuffleArr = (arr) => {
 
 // console.log(shuffleArr(alphabet))
 
+
 const nextIndex = () => {
-    return Math.floor(Math.random() * (7 - 4 + 1) + 4)
+    return Math.floor(Math.random() * (8 - 4)) + 4;
 }
 
 const chunk = (array) => {
