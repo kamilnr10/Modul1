@@ -26,12 +26,12 @@ const ob = [{
 
 function filterWith(arr, filter) {
     if (filter.length > 0 && filter.length < 3) {
-        return alert('wpisz co najmniej 3 litery')
+        return []
     } else
         return arr.filter((item) => {
             if (filter.length >= 3) {
                 return Object.keys(item).some((key) => item[key].includes(filter));
-            } else if (filter.length = 0) {
+            } else if (filter.length === 0) {
                 return arr
             }
         });
