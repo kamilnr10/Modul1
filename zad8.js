@@ -4,29 +4,63 @@
 // Dodatkowe pola - phoneNr - random 9 numbers,
 // oraz _id = objectId() - wykorzystać bibliotekę  https://www.npmjs.com/package/uuid
 
-const randomAge = () => {
-    return Math.floor(Math.random() * 68) + 18;
+const humans = [
+  {
+    name: "Dianna",
+    surname: "Bates"
+  },
+  {
+    name: "Angelita",
+    surname: "Walls"
+  },
+  {
+    name: "Sykes",
+    surname: "York"
+  }
+];
+
+const mailDomain = ["gmail.com", "onet.pl", "wp.pl"];
+
+const GenerateHuman = () => {
+  const pickHuman = () => {
+    return humans[Math.floor(Math.random() * humans.length)];
+  };
+
+  const nameHuman = pickHuman();
+
+  const generateEmail = () => {
+    const pickDomain = mailDomain[
+      Math.floor(Math.random() * mailDomain.length)
+    ].toLowerCase();
+    return `${nameHuman.name + nameHuman.surname}@${pickDomain}`;
+  };
+
+  const randomAge = () => {
+    const minAge = 18;
+    const maxAge = 85;
+    return Math.floor(Math.random() * (maxAge - minAge + 1) + minAge);
+  };
+
+  const oneOf = arr => {
+    return arr[Math.floor(Math.random() * arr.length)];
+  };
+
+  const phoneNr = () => {
+    return Math.random()
+      .toString()
+      .slice(2, 11);
+  };
+  const objectId = uuidv4();
+
+  return {
+    name: nameHuman.name,
+    surname: nameHuman.surname,
+    email: generateEmail().toLowerCase(),
+    age: randomAge(),
+    country: oneOf(["PL", "UK", "USA"]),
+    phone: phoneNr(),
+    _id: objectId
+  };
 };
-const countryArray = ["PL", "UK", "USA"];
-const oneOf = () => {
-    return countryArray[Math.floor(Math.random() * countryArray.length)];
-}
 
-const phoneNr = () => {
-    return Math.random().toString().slice(2, 11);
-}
-
-const GenerateHuman = function (name, surname) {
-    const objectId = uuidv4();
-
-    this.name = name;
-    this.surname = surname;
-    this.email = `${name}@${surname}`.toLowerCase();
-    this.age = randomAge();
-    this.country = oneOf();
-    this.phone = phoneNr();
-    this._id = objectId;
-};
-
-const human = new GenerateHuman("Tomek", "Omega");
-const human2 = new GenerateHuman("Kasia", "Chomik")
+console.log("Task 8:", GenerateHuman());
