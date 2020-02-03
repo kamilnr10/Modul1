@@ -6,4 +6,4 @@ const evenNumbers = array => {
     return el % 2 == 0;
   });
 };
-console.log(`Task 6: Only even numbers in array: ${evenNumbers} `);
+console.log(`Task 6: Only even numbers in array: ${evenNumbers(numbers)} `);
