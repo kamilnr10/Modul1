@@ -29,15 +29,29 @@ const alphabetArray = [
   "z"
 ];
 
-const chunkArray = arr => {
-  const randomNumber = Math.floor(Math.random() * (8 - 4)) + 4;
-  console.log(randomNumber);
-  const dividedArray = [];
-  for (let i = 0; i < arr.length; i += randomNumber) {
-    const rnd = Math.floor(Math.random() * (8 - 4)) + 4;
-    dividedArray.push(arr.slice(i, rnd + i));
-  }
-  return dividedArray;
+// const chunkArray = arr => {
+//   const min = 4;
+//   const max = 7;
+//   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + 4;
+//   console.log(randomNumber);
+//   const dividedArray = [];
+//   for (let i = 0; i < arr.length; i += randomNumber) {
+//     const rnd = Math.floor(Math.random() * (max - min + 1)) + 4;
+//     dividedArray.push(arr.slice(i, rnd + i));
+//   }
+//   return dividedArray;
+// };
+
+// console.log(chunkArray(alphabetArray));
+
+const chunkArray = array => {
+  return array.reduce((accumulator, index) => {
+    const min = 4;
+    const max = 7;
+    let randomIndex = Math.floor(Math.random() * (max - min + 1) + 4);
+    accumulator.push(array.splice(index, randomIndex));
+    return accumulator;
+  }, []);
 };
 
-console.log(chunkArray(alphabetArray));
+console.log("Task 10:", chunkArray(alphabetArray));

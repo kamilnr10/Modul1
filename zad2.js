@@ -3,11 +3,11 @@
 // można zbudować trójkąt prostokątny, lub informację że
 // z podanych długości nie można utworzyć trójkąta prostokątnego"
 
-const buildTriangleRectangular = (a, b, c) => {
+const isTriangleRectangular = (a, b, c) => {
   return Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2) ? true : false;
 };
 console.log(
-  `Task 2: Can you build a rectangular triangle: ${buildTriangleRectangular(
+  `Task 2: Can you build a rectangular triangle: ${isTriangleRectangular(
     3,
     4,
     5

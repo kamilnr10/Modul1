@@ -20,14 +20,14 @@ const arrayOfWords = [
   "karol",
   "amelia"
 ];
-const searchWordInArray = (array, word) => {
-  array.includes(word)
+const searchWordInArray = word => {
+  arrayOfWords.includes(word)
     ? console.log(
-        `Task 5: Word: ${word} is in Array. Index of this word is: ${array.indexOf(
+        `Task 5: Word: ${word} is in Array. Index of this word is: ${arrayOfWords.indexOf(
           word
         )}`
       )
     : console.log(`Task 5: Word: ${word} is not in Array`);
 };
-console.log(`Task 5: ${searchWordInArray(arrayOfWords, "kamil")}`);
-console.log(`Task 5: ${searchWordInArray(arrayOfWords, "bogdan")}`);
+console.log(`Task 5: ${searchWordInArray("kamil")}`);
+console.log(`Task 5: ${searchWordInArray("bogdan")}`);
