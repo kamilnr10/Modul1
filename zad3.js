@@ -1,6 +1,6 @@
 // 3) Wygeneruj tablicę zawierającą 10 liczb losowych.
-const generateArraayWithTenNumbers = (min, max) => {
-  return [...Array(10)].map(val => {
+const generateArrayWithTenNumbers = (min, max) => {
+  return [...Array(10)].map(el => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   });
 };
