@@ -4,7 +4,7 @@
 // Dodatkowe pola - phoneNr - random 9 numbers,
 // oraz _id = objectId() - wykorzystać bibliotekę  https://www.npmjs.com/package/uuid
 
-const humans = [
+const peopleGroup = [
   {
     name: "Dianna",
     surname: "Bates"
@@ -26,28 +26,29 @@ const maxAge = 85;
 
 const country = ["PL", "UK", "USA"];
 
-const GenerateHuman = (array, domains, ageMin, ageMax, country) => {
-  const pickHuman = () => {
-    return array[Math.floor(Math.random() * array.length)];
-  };
+const generators = {
+  pickHuman() {
+    return peopleGroup[Math.floor(Math.random() * peopleGroup.length)];
+  },
 
-  const nameHuman = pickHuman();
-
-  const generateEmail = () => {
-    const pickDomain = domains[
-      Math.floor(Math.random() * domains.length)
+  generateEmail() {
+    const randomDomain = mailDomain[
+      Math.floor(Math.random() * mailDomain.length)
     ].toLowerCase();
-    return `${nameHuman.name + nameHuman.surname}@${pickDomain}`;
-  };
+    return `${this.pickHuman().name +
+      this.pickHuman().surname}@${randomDomain}`.toLowerCase();
+  },
 
-  const randomAge = () => {
-    return Math.floor(Math.random() * (ageMax - ageMin + 1) + ageMin);
-  };
+  randomAge() {
+    return Math.floor(Math.random() * (maxAge - minAge + 1) + minAge);
+  },
 
-  const oneOf = () => {
+  oneOf() {
     return country[Math.floor(Math.random() * country.length)];
-  };
+  }
+};
 
+const generateHuman = data => {
   const phoneNr = () => {
     return Math.random()
       .toString()
@@ -56,14 +57,14 @@ const GenerateHuman = (array, domains, ageMin, ageMax, country) => {
   const objectId = uuidv4();
 
   return {
-    name: nameHuman.name,
-    surname: nameHuman.surname,
-    email: generateEmail().toLowerCase(),
-    age: randomAge(),
-    country: oneOf(),
+    name: data.pickHuman().name,
+    surname: data.pickHuman().surname,
+    email: data.generateEmail().toLowerCase(),
+    age: data.randomAge(),
+    country: data.oneOf(),
     phone: phoneNr(),
     _id: objectId
   };
 };
 
-console.log("Task 8:", GenerateHuman(humans, mailDomain, 18, 85, country));
+console.log("Task 8:", generateHuman(generators));

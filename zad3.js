@@ -6,9 +6,3 @@ const generateArrayWithTenNumbers = (min, max) => {
 };
 
 console.log(`Task 3: ${generateArrayWithTenNumbers(0, 100)}`);
-
-const genarr = (min, max) => {
-  return [...Array(10)].map(el => {
-    return Math.floor(Math.random * (max - min + 1) + min);
-  });
-};
