@@ -3,22 +3,22 @@
 // filtrowanie arraya z obiektami po stringu, tak aby 0 znaków w filtrze oznaczało cały array
 //  jeśli od 0 do 3 to ma nic nie filtrować, a powyżej 3 ma filtrować po każdym kluczu w obiekcie
 
-const ob = [
+const animals = [
   {
-    name: "Kamil",
-    surname: "nowak"
+    name: "Tofik",
+    breed: "Native American Indian Dog"
+  },
+  {
+    name: "Logan",
+    breed: "Golden Retriever"
   },
   {
     name: "Lexus",
-    surname: "nowwawak"
+    breed: "Siberian Husky"
   },
   {
-    name: "Olga",
-    surname: "alaka"
-  },
-  {
-    name: "Ala",
-    surname: "kowiq"
+    name: "Kajtek",
+    breed: "German Shephard"
   }
 ];
 
