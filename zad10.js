@@ -46,9 +46,7 @@ const alphabetArray = [
 
 const chunkArray = array => {
   return array.reduce((accumulator, index) => {
-    const min = 4;
-    const max = 7;
-    let randomIndex = Math.floor(Math.random() * (max - min + 1) + 4);
+    let randomIndex = Math.floor(Math.random() * (8 - 4) + 4);
     accumulator.push(array.splice(index, randomIndex));
     return accumulator;
   }, []);
