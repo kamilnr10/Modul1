@@ -21,28 +21,31 @@ const humans = [
 
 const mailDomain = ["gmail.com", "onet.pl", "wp.pl"];
 
-const GenerateHuman = () => {
+const minAge = 18;
+const maxAge = 85;
+
+const country = ["PL", "UK", "USA"];
+
+const GenerateHuman = (array, domains, ageMin, ageMax, country) => {
   const pickHuman = () => {
-    return humans[Math.floor(Math.random() * humans.length)];
+    return array[Math.floor(Math.random() * array.length)];
   };
 
   const nameHuman = pickHuman();
 
   const generateEmail = () => {
-    const pickDomain = mailDomain[
-      Math.floor(Math.random() * mailDomain.length)
+    const pickDomain = domains[
+      Math.floor(Math.random() * domains.length)
     ].toLowerCase();
     return `${nameHuman.name + nameHuman.surname}@${pickDomain}`;
   };
 
   const randomAge = () => {
-    const minAge = 18;
-    const maxAge = 85;
-    return Math.floor(Math.random() * (maxAge - minAge + 1) + minAge);
+    return Math.floor(Math.random() * (ageMax - ageMin + 1) + ageMin);
   };
 
-  const oneOf = arr => {
-    return arr[Math.floor(Math.random() * arr.length)];
+  const oneOf = () => {
+    return country[Math.floor(Math.random() * country.length)];
   };
 
   const phoneNr = () => {
@@ -57,10 +60,10 @@ const GenerateHuman = () => {
     surname: nameHuman.surname,
     email: generateEmail().toLowerCase(),
     age: randomAge(),
-    country: oneOf(["PL", "UK", "USA"]),
+    country: oneOf(),
     phone: phoneNr(),
     _id: objectId
   };
 };
 
-console.log("Task 8:", GenerateHuman());
+console.log("Task 8:", GenerateHuman(humans, mailDomain, 18, 85, country));

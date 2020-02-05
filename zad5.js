@@ -21,13 +21,11 @@ const arrayOfWords = [
   "amelia"
 ];
 const searchWordInArray = word => {
-  arrayOfWords.includes(word)
-    ? console.log(
-        `Task 5: Word: ${word} is in Array. Index of this word is: ${arrayOfWords.indexOf(
-          word
-        )}`
-      )
-    : console.log(`Task 5: Word: ${word} is not in Array`);
+  if (arrayOfWords.includes(word))
+    return `Task 5: Word: ${word} is in Array. Index of this word is: ${arrayOfWords.indexOf(
+      word
+    )}`;
+  else return `Task 5: Word: ${word} is not in Array`;
 };
-console.log(`Task 5: ${searchWordInArray("kamil")}`);
-console.log(`Task 5: ${searchWordInArray("bogdan")}`);
+console.log(searchWordInArray("kamil"));
+console.log(searchWordInArray("bogdan"));
