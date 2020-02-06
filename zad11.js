@@ -6,31 +6,46 @@
 const animals = [
   {
     name: "Tofik",
-    breed: "Native American Indian Dog"
+    breed: "Native American Indian Dog",
+    owner: {
+      id: 1,
+      name: "Kamil"
+    }
   },
   {
     name: "Logan",
-    breed: "Golden Retriever"
+    breed: "Golden Retriever",
+    owner: {
+      id: 2,
+      name: "Tomek"
+    }
   },
   {
     name: "Lexus",
-    breed: "Siberian Husky"
+    breed: "Siberian Husky",
+    owner: {
+      id: 3,
+      name: "Bogdan"
+    }
   },
   {
-    name: "Kajtek",
-    breed: "German Shephard"
+    size: "Medium",
+    age: 6
   }
 ];
 
 const filterWith = (arr, filter) => {
   if (filter.length > 0 && filter.length < 3) {
     return [];
-  } else
+  } else if (filter.length === 0) {
+    return arr;
+  } else {
     return arr.filter(item => {
       if (filter.length >= 3) {
-        return Object.keys(item).some(key => item[key].includes(filter));
-      } else if (filter.length === 0) {
-        return arr;
+        return JSON.stringify(item).includes(filter) ? item : null;
       }
     });
+  }
 };
+
+console.log("Task 11: Filter with key:", filterWith(animals, "name"));
