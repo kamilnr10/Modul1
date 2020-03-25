@@ -1,0 +1,23 @@
+{
+  "name": "modul",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamilnr10/Modul1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamilnr10/Modul1/issues"
+  },
+  "homepage": "https://github.com/kamilnr10/Modul1#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
