@@ -13,8 +13,6 @@ describe("Function checkMyAge()", () => {
     assert.equal(checkMyAge(yearOfBirth), 30);
   });
 
-
-
   test("should return type of number", () => {
     assert.typeOf(checkMyAge(yearOfBirth), "number");
   });
@@ -23,6 +21,17 @@ describe("Function checkMyAge()", () => {
     assert.isAbove(checkMyAge(yearOfBirth), 0);
   });
 });
+
+// Function should: 
+// throw Error when type of string is given
+// throw Error when decimal number is given
+// Arguments should:
+// be a positive number
+// be in range 1900 - actual year
+
+
+
+
 
 // describe("Function - generate array", () => {
 //   test("it should has length equal to 10", () => {
