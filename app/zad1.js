@@ -7,7 +7,7 @@ const checkMyAge = birthYear => {
     const actualYear = date.getFullYear();
     return actualYear - birthYear;
   } else {
-    throw Error('Year of birth should be type of number')
+    throw Error('You must provide a number')
   }
 };
 // console.log(`Task 1: I am ${checkMyAge(1990)} years old`);

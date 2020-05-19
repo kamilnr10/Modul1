@@ -20,7 +20,18 @@ describe("Function checkMyAge()", () => {
   test("should be above 0", () => {
     assert.isAbove(checkMyAge(yearOfBirth), 0);
   });
+
+  test('should throw an error if called without an arg', () => {
+    expect(checkMyAge()).to.throw('You must provide a number')
+  })
+
+  test('should throw an error if called without a number', () => {
+    expect(checkMyAge('1990')).to.throw('You must provide a number')
+  })
+
 });
+
+
 
 // Function should: 
 // throw Error when type of string is given
