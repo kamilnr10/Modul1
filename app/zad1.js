@@ -2,14 +2,14 @@
 // Funkcja powinna zwrócić Twój aktualny wiek.
 
 const checkMyAge = birthYear => {
-  if (typeof birthYear === 'number') {
-    const date = new Date();
-    const actualYear = date.getFullYear();
-    return actualYear - birthYear;
-  } else {
-    throw Error('You must provide a number')
-  }
+  if (!birthYear || typeof birthYear !== 'number')
+    throw new Error('Argument is needed');
+
+  const date = new Date();
+  const actualYear = date.getFullYear();
+  return actualYear - birthYear;
+
 };
-// console.log(`Task 1: I am ${checkMyAge(1990)} years old`);
+console.log(`Task 1: I am ${checkMyAge(1990)} years old`);
 
 module.exports = checkMyAge;

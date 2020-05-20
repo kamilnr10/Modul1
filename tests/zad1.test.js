@@ -1,33 +1,40 @@
 const chai = require("chai");
 const assert = chai.assert;
 const expect = require("chai").expect;
+const err = require('chai').AssertionError
 const should = chai.should();
 
 const checkMyAge = require("../app/zad1.js");
 
 
+
 describe("Function checkMyAge()", () => {
-  const yearOfBirth = 1990;
-
-  test("should return 30 when 1990 year is given", () => {
-    assert.equal(checkMyAge(yearOfBirth), 30);
+  const myAge = checkMyAge(1990)
+  console.log(myAge)
+  it("should return 30 when 1990 year is given", () => {
+    expect(myAge).to.equal(30)
   });
 
-  test("should return type of number", () => {
-    assert.typeOf(checkMyAge(yearOfBirth), "number");
+  it("should return type of number", () => {
+    // assert.typeOf(myAge, "number");
+    expect(myAge).to.be.a('number')
   });
 
-  test("should be above 0", () => {
-    assert.isAbove(checkMyAge(yearOfBirth), 0);
+  it("should return above 0", () => {
+    assert.isAbove(myAge, 0);
   });
 
-  test('should throw an error if called without an arg', () => {
-    expect(checkMyAge()).to.throw('You must provide a number')
+  it('should throw an error if called without an arg ', () => {
+    expect(() => {
+      checkMyAge()
+    }).to.throw()
+  })
+  it('should throw an erroe if called without a number', () => {
+    expect(() => {
+      checkMyAge('1990')
+    }).to.throw()
   })
 
-  test('should throw an error if called without a number', () => {
-    expect(checkMyAge('1990')).to.throw('You must provide a number')
-  })
 
 });
 
@@ -55,4 +62,5 @@ describe("Function checkMyAge()", () => {
 // it("should be type of number", () => {
 //   expect(checkMyAge(1990)).to.be.a("number");
 // });
+
 // });
