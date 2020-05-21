@@ -15,27 +15,29 @@ describe("Function checkMyAge()", () => {
     expect(myAge).to.equal(30)
   });
 
-  it("should return type of number", () => {
-    // assert.typeOf(myAge, "number");
-    expect(myAge).to.be.a('number')
-  });
-
-  it("should return above 0", () => {
+  it("should return positive number >=0", () => {
     assert.isAbove(myAge, 0);
   });
+
 
   it('should throw an error if called without an arg ', () => {
     expect(() => {
       checkMyAge()
-    }).to.throw()
+    }).to.throw('No input')
   })
-  it('should throw an erroe if called without a number', () => {
+
+  it('should throw an error if called without a number', () => {
     expect(() => {
       checkMyAge('1990')
-    }).to.throw()
+    }).to.throw('Wrong data type')
   })
 
-
+  it('should throw an error if called yearOfBirth is not in range 1900 - actaual year',
+    () => {
+      expect(() => {
+        checkMyAge(1850)
+      }).to.throw('yearOfBirth should be in range 1990-actual year')
+    })
 });
 
 
