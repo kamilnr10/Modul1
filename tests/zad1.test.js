@@ -39,30 +39,3 @@ describe("Function checkMyAge()", () => {
       }).to.throw('yearOfBirth should be in range 1990-actual year')
     })
 });
-
-
-
-// Function should: 
-// throw Error when type of string is given
-// throw Error when decimal number is given
-// Arguments should:
-// be a positive number
-// be in range 1900 - actual year
-
-
-
-
-
-// describe("Function - generate array", () => {
-//   test("it should has length equal to 10", () => {
-//     expect(generateArrayWithTenNumbers(1, 100)).toHaveLength(10);
-//     // expect(generateArrayWithTenNumbers(1, 100)).toBeWithinRange(1, 100);
-//   });
-//   test("should be within range 1 - 100", () => {
-//     expect(generateArrayWithTenNumbers(1, 100)).toHaveLength(10);
-//   });
-// it("should be type of number", () => {
-//   expect(checkMyAge(1990)).to.be.a("number");
-// });
-
-// });
