@@ -1,5 +1,8 @@
 // 3) Wygeneruj tablicę zawierającą 10 liczb losowych.
 const generateArrayWithTenNumbers = (min, max) => {
+  if (!min || !max || typeof min !== 'number' || typeof max !== 'number') {
+    throw new Error('Inputs should be positive Numbers');
+  }
   return [...Array(10)].map(el => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   });
