@@ -5,7 +5,7 @@
 
 const isTriangleRectangular = (a, b, c) => {
   if (!a || !b || !c) {
-    throw new Error('Inputs are needed')
+    throw new Error('3 inputs are needed')
   } else if (
     typeof a !== "number" ||
     typeof b !== "number" ||
@@ -13,10 +13,15 @@ const isTriangleRectangular = (a, b, c) => {
     a < 0 ||
     b < 0 ||
     c < 0) {
-    throw new Error('Inputs should be positive numbers')
+    throw new Error('Inputs should be positive Numbers')
+  } else if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
+    return true
+  } else {
+    throw new Error('From given arguments there is no way to build rectangular triangle')
   }
-  return Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2) ? true : false;
 };
+
+
 // console.log(
 //   `Task 2: Can you build a rectangular triangle: ${isTriangleRectangular(
 //     3,
