@@ -21,4 +21,5 @@ const generateArrayOfTenArraysWithRandNumbers = (min, max) => {
   });
 };
 
-console.log(`Task 4: ${generateArrayOfTenArraysWithRandNumbers(0, 100)}`);
+module.exports = generateArrayOfTenArraysWithRandNumbers;
+// console.log(`Task 4: ${generateArrayOfTenArraysWithRandNumbers(0, 100)}`);

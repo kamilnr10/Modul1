@@ -18,6 +18,14 @@ describe("Function isTriangleRectangular()", () => {
     assert.typeOf(rectangularTriangle, "boolean");
   });
 
+  it("should return false if called with arguments 5, 4, 3", () => {
+    const a = 3;
+    const b = 4;
+    const c = 5;
+    const rectangularTriangle = isTriangleRectangular(c, b, a);
+    expect(rectangularTriangle).to.be.false
+  });
+
   it('should throw an error if called without an arg or with wrong number of arguments', () => {
     expect(() => {
       isTriangleRectangular()
@@ -37,15 +45,11 @@ describe("Function isTriangleRectangular()", () => {
     }
 
     for (let i = 0; i <= argumentsArray.length; i++) {
-      expect(() => {
-        isTriangleRectangular(pickArg(), pickArg(), pickArg())
-      }).to.throw('Inputs should be positive Numbers')
+      expect(() => isTriangleRectangular(pickArg(), pickArg(), pickArg())).to.throw('Inputs should be positive Numbers')
+      // expect(() => {
+      //   isTriangleRectangular(pickArg(), pickArg(), pickArg())
+      // }).to.throw('Inputs should be positive Numbers')
     }
   })
 
-  it('should throw an error if there is no way to build rectangular triangle from given arguments', () => {
-    expect(() => {
-      isTriangleRectangular(4, 5, 4)
-    }).to.throw('From given arguments there is no way to build rectangular triangle')
-  })
 });

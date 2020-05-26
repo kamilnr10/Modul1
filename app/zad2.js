@@ -16,9 +16,8 @@ const isTriangleRectangular = (a, b, c) => {
     throw new Error('Inputs should be positive Numbers')
   } else if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
     return true
-  } else {
-    throw new Error('From given arguments there is no way to build rectangular triangle')
-  }
+  } else return false
+
 };
 
 
