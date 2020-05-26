@@ -22,6 +22,12 @@ describe('Function generateArrayWithTenNumbers()', () => {
         }).to.throw('2 inputs are needed')
     })
 
+    it('should throw an Error if called without numbers', () => {
+        expect(() => {
+            generetaArrayWithTenNumbers('10', '100')
+        }).to.throw('Inputs should be numbers')
+    })
+
     it('should throw an Error if called with decimal numbers', () => {
         expect(() => {
             generetaArrayWithTenNumbers(5.43, 10.4343)

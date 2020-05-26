@@ -2,6 +2,8 @@
 const generateArrayWithTenNumbers = (min, max) => {
   if (!min || !max) {
     throw new Error('2 inputs are needed')
+  } else if (typeof min !== 'number' && typeof max !== 'number') {
+    throw new Error('Inputs should be numbers')
   } else if (min !== parseInt(min, 10 || max !== parseInt(max, 10))) {
     throw new Error('Numbers must be integers')
   } else {
