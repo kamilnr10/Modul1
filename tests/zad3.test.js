@@ -8,6 +8,10 @@ const generetaArrayWithTenNumbers = require('../app/zad3');
 
 describe('Function generateArrayWithTenNumbers()', () => {
 
+    it('should be a function', () => {
+        expect(generetaArrayWithTenNumbers).to.be.a('function')
+    })
+
     it('should return an Array', () => {
         expect(generetaArrayWithTenNumbers(1, 100)).to.be.a('array')
     });

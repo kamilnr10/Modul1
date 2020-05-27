@@ -10,12 +10,16 @@ const isTriangleRectangular = require("../app/zad2");
 
 describe("Function isTriangleRectangular()", () => {
 
-  it("should return true if called with arguments 3,4,5", () => {
+  it('should be a function', () => {
+    expect(isTriangleRectangular).to.be.a('function')
+  })
+
+  it("should return boolean if called with Numbers as arguments", () => {
     const a = 3;
     const b = 4;
     const c = 5;
     const rectangularTriangle = isTriangleRectangular(a, b, c);
-    assert.typeOf(rectangularTriangle, "boolean");
+    expect(rectangularTriangle).which.is.a('boolean').but.not.a('number')
   });
 
   it("should return false if called with arguments 5, 4, 3", () => {
@@ -26,13 +30,13 @@ describe("Function isTriangleRectangular()", () => {
     expect(rectangularTriangle).to.be.false
   });
 
-  it('should throw an error if called without an arg or with wrong number of arguments', () => {
+  it('should throw an error if called without an argument or with wrong number of arguments', () => {
     expect(() => {
       isTriangleRectangular()
     }).to.throw('3 inputs are needed')
   })
 
-  it('should throw an error if called without numbers', () => {
+  it('should throw an error if called with arguments which are not Numbers', () => {
     const argumentsArray = [3, 4, -1, '4', 'string', {
         name: 'kamil'
       },

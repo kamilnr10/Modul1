@@ -11,6 +11,10 @@ const checkMyAge = require("../app/zad1.js");
 describe("Function checkMyAge()", () => {
   const myAge = checkMyAge(1990)
 
+  it('should be a function', () => {
+    expect(checkMyAge).to.be.a('function')
+  })
+
   it("should return 30 when 1990 year is given", () => {
     expect(myAge).to.equal(30)
   });
