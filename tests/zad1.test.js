@@ -11,10 +11,6 @@ const checkMyAge = require("../app/zad1.js");
 describe("Function checkMyAge()", () => {
   const myAge = checkMyAge(1990)
 
-  it('should be a function', () => {
-    expect(checkMyAge).to.be.a('function')
-  })
-
   it("should return 30 when 1990 year is given", () => {
     expect(myAge).to.equal(30)
   });
@@ -24,19 +20,19 @@ describe("Function checkMyAge()", () => {
   });
 
 
-  it('should throw an error if called without an arg ', () => {
+  it('should throw an error when called without an arg ', () => {
     expect(() => {
       checkMyAge()
     }).to.throw('No input')
   })
 
-  it('should throw an error if called without a number', () => {
+  it('should throw an error whenever invalid arguments are passed', () => {
     expect(() => {
       checkMyAge('1990')
     }).to.throw('Wrong data type')
   })
 
-  it('should throw an error if called yearOfBirth is not in range 1900 - actaual year',
+  it('should throw an error when called argument is not in range 1900 - actaual year',
     () => {
       expect(() => {
         checkMyAge(1850)
