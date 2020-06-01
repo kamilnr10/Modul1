@@ -1,8 +1,8 @@
 const chai = require("chai");
-const assert = chai.assert;
-const expect = require("chai").expect;
-const err = require('chai').AssertionError
-const should = chai.should();
+const {
+  assert,
+  expect
+} = chai;
 
 const checkMyAge = require("../app/zad1.js");
 

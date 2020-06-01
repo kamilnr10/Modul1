@@ -12,7 +12,7 @@ const isTriangleRectangular = require("../app/zad2");
 
 describe("Function isTriangleRectangular()", () => {
 
-  it("should return true when called with Numbers from which can create rectangular triangle", () => {
+  it("should return true when called with Numbers in order a, b, c", () => {
     const arrayOfPythagoreanThrees = [{
       a: 3,
       b: 4,
@@ -28,7 +28,12 @@ describe("Function isTriangleRectangular()", () => {
     }]
 
     for (let i = 0; i < arrayOfPythagoreanThrees.length; i++) {
-      const rectangularTriangle = isTriangleRectangular(arrayOfPythagoreanThrees[i].a, arrayOfPythagoreanThrees[i].b, arrayOfPythagoreanThrees[i].c);
+      const {
+        a,
+        b,
+        c
+      } = arrayOfPythagoreanThrees[i]
+      const rectangularTriangle = isTriangleRectangular(a, b, c)
       expect(rectangularTriangle).to.be.true
     }
 
