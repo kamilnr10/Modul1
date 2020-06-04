@@ -24,11 +24,17 @@ const arrayOfWords = [
 module.exports = arrayOfWords;
 
 const searchWordInArray = (word, array) => {
-  if (array.includes(word))
+  if (!word || !array) {
+    throw new Error('Two inputs are needed')
+  }
+  if (typeof word !== 'string' || !Array.isArray(array)) {
+    throw new Error('First argument should be type of string, second - an Array')
+  }
+  if (array.includes(word) && Array.isArray(array)) {
     return `Task 5: Word: ${word} is in Array. Index of this word is: ${array.indexOf(
       word
-    )}`;
-  else return `Task 5: Word: ${word} is not in Array`;
+    )}`
+  } else return `Task 5: Word: ${word} is not in Array`;
 };
 // console.log(searchWordInArray("kamil"));
 // console.log(searchWordInArray("bogdan"));

@@ -38,6 +38,30 @@ describe('Task 5', function () {
                 expect(searchWordInArray(arrayOfWords[i], arrayOfWords)).to.equal(`Task 5: Word: ${arrayOfWords[i]} is in Array. Index of this word is: ${arrayOfWords.indexOf(arrayOfWords[i])}`)
             }
         });
+
+        it('should throw an error when called with wrong numbers of arguments', () => {
+            expect(() => {
+                searchWordInArray()
+            }).to.throw('Two inputs are needed')
+        })
+
+        it('should throw an error when called with wrong arguments', () => {
+            const argumentsArray = [3, 4, -1, '4', 'string', {
+                    number: 5
+                },
+                null
+            ]
+
+            const pickArg = () => {
+                const pick = argumentsArray[Math.floor(Math.random() * argumentsArray.length)]
+                return pick
+            }
+
+            for (let i = 0; i < argumentsArray.length; i++) {
+                expect(() => {
+                    searchWordInArray(pickArg(), pickArg())
+                }).to.throw('First argument should be type of string, second - an Array')
+            }
+        })
     });
 });
-// expect(arrayOfWords).to.have.indexOf('kamil', 8);
