@@ -28,18 +28,11 @@ describe("searchWordInArray", () => {
             "karol",
             "amelia",
         ];
-        // console.log(searchWordInArray('kamil', arrayOfWords))
-        // expect(searchWordInArray('kamil', arrayOfWords)).to.equal(`Task 5: Word: kamil is in Array. Index of this word is: 8`)
-        for (let i = 0; i < arrayOfWords.length; i++) {
-            // assert.equal(arrayOfWords.indexOf(arrayOfWords[i]), i);
-            expect(searchWordInArray(arrayOfWords[i], arrayOfWords)).to.equal(
-                `Task 5: Word: ${
-            arrayOfWords[i]
-          } is in Array. Index of this word is: ${arrayOfWords.indexOf(
-            arrayOfWords[i]
-          )}`
-            );
-        }
+
+        expect(searchWordInArray('kamil', arrayOfWords)).to.equal(`Task 5: Word: kamil is in Array. Index of this word is: 8`);
+        expect(searchWordInArray('wojtek', arrayOfWords)).to.equal(`Task 5: Word: wojtek is in Array. Index of this word is: 10`);
+        expect(searchWordInArray('gosia', arrayOfWords)).to.equal(`Task 5: Word: gosia is in Array. Index of this word is: 2`);
+
     });
 
     it("should throw an error when called with wrong numbers of arguments", () => {
