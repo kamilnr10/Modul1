@@ -59,7 +59,7 @@ describe("searchWordInArray", () => {
             return pick;
         };
 
-        for (let i = 0; i < argumentsArray.length; i++) {
+        for (let test of argumentsArray) {
             expect(() => {
                 searchWordInArray(pickArg(), pickArg());
             }).to.throw(

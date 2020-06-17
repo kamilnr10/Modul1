@@ -6,6 +6,12 @@
 const arrayOfNumbers = [2, 4, 5, 7];
 
 const map = (arr, mapFunc) => {
+  if (!arr.length) {
+    throw new Error('First argument should be an array and it can not be empty')
+  }
+  if (typeof mapFunc !== 'function') {
+    throw new Error('Second argument should be a function')
+  }
   const mapArr = [];
   for (let i = 0; i < arr.length; i++) {
     const result = mapFunc(arr[i], i, arr);
@@ -21,6 +27,12 @@ const addTwo = el => {
 console.log(`Task 7: Map method returns: ${map(arrayOfNumbers, addTwo)}`);
 
 const filter = (arr, filterFunc) => {
+  if (!arr.length) {
+    throw new Error('First argument should be an array and it can not be empty')
+  }
+  if (typeof filterFunc !== 'function') {
+    throw new Error('Second argument should be a function')
+  }
   const filterArr = [];
   for (let i = 0; i < arr.length; i++) {
     const result = filterFunc(arr[i], i, arr);
@@ -38,6 +50,12 @@ console.log(
 );
 
 const reduce = (arr, reducer, initialValue) => {
+  if (!arr.length) {
+    throw new Error('First argument should be an array and it can not be empty')
+  }
+  if (typeof reducer !== 'function') {
+    throw new Error('Second argument should be a function')
+  }
   let acc = initialValue === undefined ? 0 : initialValue;
   for (let i = 0; i < arr.length; i++) acc = reducer(acc, arr[i], i, arr);
   return acc;

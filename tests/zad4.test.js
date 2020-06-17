@@ -16,11 +16,11 @@ describe('Function generateArrayOfTenArraysWithRandNumbers', () => {
         const testElementsRange = (start, end) => {
             const arrayOfArrays = generateArrayOfTenArraysWithRandNumbers(10, 20);
 
-            for (let i = 0; i < arrayOfArrays.length; ++i) {
-                const actualArray = arrayOfArrays[i]
-                for (let j = 0; j < actualArray.length; j++) {
-                    assert.isAtLeast(actualArray[j], start);
-                    assert.isAtMost(actualArray[j], end);
+            for (let array of arrayOfArrays) {
+                const actualArray = array
+                for (let test of actualArray) {
+                    assert.isAtLeast(test, start);
+                    assert.isAtMost(test, end);
                 }
             }
         }

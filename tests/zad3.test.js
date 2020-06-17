@@ -20,9 +20,9 @@ describe('Function generateArrayWithTenNumbers()', () => {
         const testElementsRange = (start, end) => {
             const actualArray = generetaArrayWithTenNumbers(10, 20);
 
-            for (let i = 0; i < actualArray.length; ++i) {
-                assert.isAtLeast(actualArray[i], start);
-                assert.isAtMost(actualArray[i], end);
+            for (let test of actualArray) {
+                assert.isAtLeast(test, start);
+                assert.isAtMost(test, end);
             }
         }
         testElementsRange(10, 20);

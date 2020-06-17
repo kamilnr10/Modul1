@@ -27,12 +27,12 @@ describe("Function isTriangleRectangular()", () => {
       c: 25
     }]
 
-    for (let i = 0; i < arrayOfPythagoreanThrees.length; i++) {
+    for (let test of arrayOfPythagoreanThrees) {
       const {
         a,
         b,
         c
-      } = arrayOfPythagoreanThrees[i]
+      } = test
       const rectangularTriangle = isTriangleRectangular(a, b, c)
       expect(rectangularTriangle).to.be.true
     }
@@ -45,7 +45,7 @@ describe("Function isTriangleRectangular()", () => {
       return arrayOfNumbers[Math.floor(Math.random() * arrayOfNumbers.length)]
     }
 
-    for (let i = 0; i <= arrayOfNumbers.length; i++) {
+    for (let test of arrayOfNumbers) {
       const rectangularTriangle = isTriangleRectangular(pickNumber(), pickNumber(), pickNumber());
       expect(rectangularTriangle).to.be.false
     }
@@ -69,8 +69,7 @@ describe("Function isTriangleRectangular()", () => {
       return pick
     }
 
-    for (let i = 0; i <= argumentsArray.length; i++) {
-      // console.log(pickArg())
+    for (let test of argumentsArray) {
       expect(() => isTriangleRectangular(pickArg(), pickArg(), pickArg())).to.throw('Inputs should be positive Numbers')
     }
   })
