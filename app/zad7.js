@@ -5,12 +5,14 @@
 
 const arrayOfNumbers = [2, 4, 5, 7];
 
-const map = (arr, mapFunc) => {
-  if (!arr.length) {
-    throw new Error('First argument should be an array and it can not be empty')
+const mapFunction = (arr, mapFunc) => {
+  if (!arr.length || !Array.isArray(arr)) {
+    throw new Error(
+      "First argument should be an array and it can not be empty"
+    );
   }
-  if (typeof mapFunc !== 'function') {
-    throw new Error('Second argument should be a function')
+  if (typeof mapFunc !== "function") {
+    throw new Error("Second argument should be a function");
   }
   const mapArr = [];
   for (let i = 0; i < arr.length; i++) {
@@ -20,18 +22,22 @@ const map = (arr, mapFunc) => {
   return mapArr;
 };
 
-const addTwo = el => {
+const addTwo = (el) => {
   return el + 2;
 };
 
-console.log(`Task 7: Map method returns: ${map(arrayOfNumbers, addTwo)}`);
+module.exports = mapFunction;
 
-const filter = (arr, filterFunc) => {
+// console.log(`Task 7: Map method returns: ${map(arrayOfNumbers, addTwo)}`);
+
+const filterFunction = (arr, filterFunc) => {
   if (!arr.length) {
-    throw new Error('First argument should be an array and it can not be empty')
+    throw new Error(
+      "First argument should be an array and it can not be empty"
+    );
   }
-  if (typeof filterFunc !== 'function') {
-    throw new Error('Second argument should be a function')
+  if (typeof filterFunc !== "function") {
+    throw new Error("Second argument should be a function");
   }
   const filterArr = [];
   for (let i = 0; i < arr.length; i++) {
@@ -41,33 +47,41 @@ const filter = (arr, filterFunc) => {
   return filterArr;
 };
 
-const lessThanFive = el => {
+const lessThanFive = (el) => {
   return el < 5;
 };
 
-console.log(
-  `Task 7: Filter method returns: ${filter(arrayOfNumbers, lessThanFive)}`
-);
+module.exports = filterFunction;
 
-const reduce = (arr, reducer, initialValue) => {
-  if (!arr.length) {
-    throw new Error('First argument should be an array and it can not be empty')
-  }
-  if (typeof reducer !== 'function') {
-    throw new Error('Second argument should be a function')
-  }
-  let acc = initialValue === undefined ? 0 : initialValue;
-  for (let i = 0; i < arr.length; i++) acc = reducer(acc, arr[i], i, arr);
-  return acc;
-};
+// console.log(
+//   `Task 7: Filter method returns: ${filter(arrayOfNumbers, lessThanFive)}`
+// );
+
+// const reduceFunction = (arr, reducer, initialValue) => {
+//   if (!arr.length) {
+//     throw new Error(
+//       "First argument should be an array and it can not be empty"
+//     );
+//   }
+//   if (typeof reducer !== "function") {
+//     throw new Error("Second argument should be a function");
+//   }
+//   let acc = initialValue === undefined ? 0 : initialValue;
+//   for (let i = 0; i < arr.length; i++) {
+//     acc = reducer(acc, arr[i], i, arr);
+//     return acc;
+//   }
+// };
 
 const additionAllElements = (a, b) => {
   return a + b;
 };
 
-console.log(
-  `Task 7: Reduce method returns: ${reduce(
-    arrayOfNumbers,
-    additionAllElements
-  )}`
-);
+// module.exports = reduceFunction;
+
+// console.log(
+//   `Task 7: Reduce method returns: ${reduce(
+//     arrayOfNumbers,
+//     additionAllElements
+//   )}`
+// );

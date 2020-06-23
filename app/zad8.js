@@ -8,12 +8,12 @@ const constants = {
   peopleGroup: [
     { name: "Dianna", surname: "Bates" },
     { name: "Angelita", surname: "Walls" },
-    { name: "Sykes", surname: "York" }
+    { name: "Sykes", surname: "York" },
   ],
 
   mailDomain: ["gmail.com", "onet.pl", "wp.pl"],
 
-  country: ["PL", "UK", "USA"]
+  country: ["PL", "UK", "USA"],
 };
 
 const generator = {
@@ -34,16 +34,14 @@ const generator = {
   oneOf(data) {
     const country = data.country;
     return country[Math.floor(Math.random() * country.length)];
-  }
+  },
 };
 
 const generateHuman = (data, generators) => {
   const person = generators.pickHuman(data);
   const fullName = (person.name + person.surname).toLowerCase();
   const phoneNr = () => {
-    return Math.random()
-      .toString()
-      .slice(2, 11);
+    return Math.random().toString().slice(2, 11);
   };
   const objectId = uuidv4();
 
@@ -54,8 +52,12 @@ const generateHuman = (data, generators) => {
     age: generators.randomAge(18, 85),
     country: generators.oneOf(data),
     phone: phoneNr(),
-    _id: objectId
+    _id: objectId,
   };
 };
+
+module.exports = constants;
+module.exports = generator;
+module.exports = generateHuman;
 
 console.log("Task 8:", generateHuman(constants, generator));
